@@ -1,6 +1,7 @@
 (() => {
 
-  window.addEventListener('keydown', (e) => {
+  // Function to play sound and add .active class
+  function playSound(e) {
     const audio = document.querySelector(`audio[data-key="${ e.keyCode }"]`)
     const key = document.querySelector(`.key[data-key="${ e.keyCode }"]`)
 
@@ -11,7 +12,7 @@
     audio.play()            // Plays sound
 
     key.classList.add('active')  // Adds .active class
-  })
+  }
 
   // Function that removes active class
   function removeTransition(e) {
@@ -19,8 +20,12 @@
     this.classList.remove('active')
   }
 
+
   // Run removeTransition function on transitionend event to return to normal state
   const keys = document.querySelectorAll('.key')
   keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+
+
+  window.addEventListener('keydown', playSound)
 
 })()
