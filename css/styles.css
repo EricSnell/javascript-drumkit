@@ -1,0 +1,22 @@
+.container {
+  border: solid 1px red;
+  min-width: 300px;
+  max-width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.key {
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  margin: 8px;
+  border: 2px solid #333;
+  float: left;
+  color: #333;
+}
+
+.active {
+  color: red;
+}
