@@ -1,7 +1,6 @@
 (() => {
 
   window.addEventListener('keydown', (e) => {
-
     const audio = document.querySelector(`audio[data-key="${ e.keyCode }"]`)
     const key = document.querySelector(`.key[data-key="${ e.keyCode }"]`)
 
@@ -9,10 +8,19 @@
 
     audio.currentTime = 0   // Starts audio at the beginning
 
-    audio.play()
+    audio.play()            // Plays sound
 
-    console.log(key)
-
+    key.classList.add('active')  // Adds .active class
   })
+
+  // Function that removes active class
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return // skip if it's not a transform
+    this.classList.remove('active')
+  }
+
+  // Run removeTransition function on transitionend event to return to normal state
+  const keys = document.querySelectorAll('.key')
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
 })()

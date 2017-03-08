@@ -13,10 +13,19 @@
   padding: 20px;
   margin: 8px;
   border: 2px solid #333;
+  border-radius: 8px;
   float: left;
   color: #333;
+  text-align: center;
+  transition: all 0.07s;
+}
+
+kbd {
+  display: block;
 }
 
 .active {
-  color: red;
+  transform: scale(1.1);
+  border-color: red;
+  box-shadow: 0 0 10px #333;
 }
