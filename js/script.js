@@ -5,7 +5,15 @@
     let state = document.readyState
     if (state === 'complete') {
       document.getElementById('interactive')
-      // document.getElementById('loading-container').style.visibility = 'hidden'
+
+      setTimeout(() => {
+        document.getElementById('loading-container').classList.add('fadeOut')
+      }, 3000)
+
+      setTimeout(() => {
+        document.getElementById('main-container').style.visibility = 'visible'
+      }, 3500)
+
     }
   }
 

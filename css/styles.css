@@ -45,12 +45,26 @@
   100% { opacity: 0; }
 }
 
+@keyframes fadeout {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.fadeOut {
+  opacity: 0;
+  animation: fadeout 0.3s linear;
+}
+
+#main-container {
+  visibility: hidden;
+}
+
 .key-container {
   border: solid 1px red;
   min-width: 300px;
   max-width: 500px;
   height: 500px;
-  margin: 0 auto;
+  margin: 100px auto;
   overflow: auto;
 }
 
