@@ -1,5 +1,15 @@
 (() => {
 
+  // Hide loader when app is ready
+  document.onreadystatechange = function() {
+    let state = document.readyState
+    if (state === 'complete') {
+      document.getElementById('interactive')
+      document.getElementById('loader').style.visibility = 'hidden'
+    }
+  }
+
+
   // Function to play sound and add .active class
   function playSound(e) {
     const audio = document.querySelector(`audio[data-key="${ e.keyCode }"]`)
@@ -9,10 +19,8 @@
 
     if (audio.hasAttribute('data-loop')) stopLoops(audio)
 
-    audio.currentTime = 0   // Starts audio at the beginning
-
-    audio.play()            // Plays sound
-
+    audio.currentTime = 0        // Starts audio at the beginning
+    audio.play()                 // Plays sound
     key.classList.add('active')  // Adds .active class
   }
 

@@ -1,4 +1,15 @@
-.container {
+
+#loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: teal;
+  z-index: 100;
+}
+
+.key-container {
   border: solid 1px red;
   min-width: 300px;
   max-width: 500px;
@@ -15,6 +26,9 @@
   border: 2px solid #333;
   border-radius: 8px;
   float: left;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 60px;
   color: #333;
   text-align: center;
   transition: all 0.07s;
